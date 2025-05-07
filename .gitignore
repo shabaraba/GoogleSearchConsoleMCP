@@ -25,4 +25,7 @@ credentials.json
 *.swp
 *.swo
 .DS_Store
+
+# Claude Desktop settings
+.claude/
 **/.claude/settings.local.json
