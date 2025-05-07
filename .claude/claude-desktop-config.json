@@ -1,0 +1,11 @@
+{
+  "mcp": {
+    "auto_connect": [
+      {
+        "name": "Google Search Console MCP",
+        "url": "local:npm/run/start-server",
+        "description": "Google Search ConsoleのAPIにアクセスするMCPサーバー"
+      }
+    ]
+  }
+}
