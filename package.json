@@ -1,0 +1,32 @@
+{
+  "name": "googlesearchconsolemcp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "google-search-console-mcp": "./bun-claude-desktop.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "bun dist/index.js", 
+    "dev": "bun src/index.ts",
+    "start-server": "bun src/claudeDesktopLauncher.ts",
+    "claude-desktop": "bun src/claudeDesktopLauncher.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Google Search Console APIとModel Context Protocol (MCP) TypeScript SDKを使用したMCPサーバーの実装です。",
+  "devDependencies": {
+    "@types/node": "^22.15.14",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "googleapis": "^148.0.0"
+  }
+}
