@@ -63,7 +63,21 @@ npm run start-server
 
 Claude Desktopアプリケーションを使用している場合は、以下の手順で簡単に接続できます：
 
-### 方法1: 直接実行（推奨）
+### 方法1: 自動起動の設定（最も推奨）
+
+Claude Desktopを起動するたびに自動的にMCPサーバーが起動するよう設定できます：
+
+1. `.claude/claude-desktop-config.json`ファイルを作成または編集：
+   ```json
+    "google-search-console-server": {
+      "command": "/opt/homebrew/bin/bun",
+      "args": ["path/to/GoogleSearchConsoleMCP/bun-claude-desktop.ts"]
+    },
+   ```
+
+2. このファイルを保存すると、次回Claude Desktop起動時に自動的にMCPサーバーが起動し接続されます
+
+### 方法2: 直接実行
 
 Claude Desktopから直接MCPサーバーを起動し、終了時に自動的にシャットダウンします：
 
@@ -88,7 +102,7 @@ Claude Desktopから直接MCPサーバーを起動し、終了時に自動的に
    ```
    ※bun-claude-desktop.tsに実行権限（chmod +x）がついていることを確認してください
 
-### 方法2: 手動起動
+### 方法3: 手動起動
 
 1. MCPサーバーを起動:
    ```bash
@@ -159,10 +173,21 @@ URLインスペクションの結果を取得します。
 - `siteUrl`: Search Consoleに登録されているサイトのURL（必須）
 - `inspectionUrl`: 検査するURL（必須）
 
+## プロジェクト構成
+
+### .claudeディレクトリ
+
+このプロジェクトでは、Claude関連のファイルを`.claude`ディレクトリに整理しています：
+
+- `.claude/CLAUDE.md` - Claude向けのプロジェクト指示ファイル（Claude Code実行時に自動的に読み込まれます）
+- `.claude/claude-desktop-config.json` - Claude Desktop自動接続設定
+- `.claude/docs/` - Claude関連ドキュメント
+
 ## トラブルシューティング
 
 - **認証エラー**: credentials.jsonが正しいことと、初回認証時にGoogle Search Consoleへのアクセス許可が与えられていることを確認してください。
 - **接続エラー**: MCPサーバーが実行中であることを確認し、ポートが競合していないか確認してください。
+- **自動起動が機能しない場合**: `.claude/claude-desktop-config.json`が正しく設定されていることを確認してください。
 
 ## ライセンス
 
