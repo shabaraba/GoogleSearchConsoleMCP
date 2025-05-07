@@ -76,7 +76,7 @@ URLインスペクションの結果を取得します。
 自動起動が機能しない場合は、以下のコマンドを使用して手動でサーバーを起動できます：
 
 ```
-cd /Users/t002451/my_work/private/GoogleSearchConsoleMCP
+cd プロジェクトのディレクトリ
 npm run start-server
 ```
 

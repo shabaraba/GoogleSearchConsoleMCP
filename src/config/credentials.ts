@@ -39,7 +39,8 @@ try {
 let CREDENTIALS_PATH = '';
 const possiblePaths = [
   path.resolve(process.cwd(), 'credentials.json'),
-  path.resolve('/Users/t002451/my_work/private/GoogleSearchConsoleMCP', 'credentials.json'),
+  path.resolve(__dirname, '..', '..', 'credentials.json'),
+  path.resolve(process.env.HOME || '/tmp', '.google-search-console-mcp', 'credentials.json'),
   path.resolve('/tmp/cred-test', 'credentials.json'), // For testing
 ];
 

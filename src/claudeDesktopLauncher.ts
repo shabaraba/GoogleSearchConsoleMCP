@@ -19,7 +19,10 @@ async function main() {
   // Ensure we're in the right directory
   if (!process.cwd().includes('GoogleSearchConsoleMCP')) {
     console.error('Changing working directory to the project root');
-    process.chdir('/Users/t002451/my_work/private/GoogleSearchConsoleMCP');
+    // 実行ファイルの場所からプロジェクトルートを取得
+    const path = require('path');
+    const projectRoot = path.resolve(__dirname, '..');
+    process.chdir(projectRoot);
     console.error(`New working directory: ${process.cwd()}`);
   }
   
